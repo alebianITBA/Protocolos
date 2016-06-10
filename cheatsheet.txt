@@ -1,0 +1,88 @@
+* Netcat
+
+nc [options] host port
+nc -l host port (listen)
+----------------------------------------------------------------------
+* Curl
+
+curl url
+curl url -Hhost:foo
+curl url -H'host: foo'
+curl -I (muestra solo la informacion del documento)
+----------------------------------------------------------------------
+* Nginx
+
+ln -s file_path link_destination (crear un sym link en sites-enabled)
+
+/etc/init.d/nginx start
+
+Server {
+    Listen 80;
+    Server_name foo;
+    Gzip on;
+    Root path_a_root;
+    Index index.html;
+
+    Location /google {
+        Return 301 https://www.google.com;
+    }
+
+    Location /facebook {
+      Proxy_pass https://www.facebook.com;
+    }
+}
+
+Para agregar un header en el response
+add_header
+
+Para agregar un header usando proxy
+proxy_set_header:
+proxy_pass:
+----------------------------------------------------------------------
+* Base64
+
+echo -n YWxndW51c3VhcmlvOmFsZ3VuYXBhc3N3b3Jk | base64 [-d]
+----------------------------------------------------------------------
+* Dig
+
+dig -t MX (para ver el hostname del mail server)
+dig -t NS (para ver el hostname del dns que resuleve)
+dig ANY
+dig host_deseado @host_que_resuelve_nombres
+----------------------------------------------------------------------
+* BIND
+
+127.0.0.1       alebian.com
+
+zone "alebian.com" {
+  type master;
+  file "/etc/bind/db.alebian.com";
+};
+
+
+;
+; BIND data file for local loopback interface
+;
+
+$TTL    604800
+@       IN      SOA     alebian.com. root.alebian.com. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@                       IN      NS      ns.alebian.com.
+@                       IN      MX      20 smtp1
+@                       IN      MX      21 smtp2
+ns                      IN      A       192.168.1.1
+smtp1    604800         IN      MX      20 123.123.123.123.
+smtp2    604800         IN      MX      21 123.123.123.124.
+www     1209600         IN      CNAME   alebian.com.
+PTR para reverso
+----------------------------------------------------------------------
+* Wireshark
+
+Tcp && http
+----------------------------------------------------------------------
+
