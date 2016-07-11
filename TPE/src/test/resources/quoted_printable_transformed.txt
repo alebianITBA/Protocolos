@@ -1,0 +1,13 @@
+From: "Juan F. Codagnone" <juan@example.org>
+To: alguien@example.org
+Subject: =?ISO-8859-1?Q?4=E13=E91=ED0=F3u=FA?=
+Date: Tue, 14 Jun 2011 23:08:28 -0300
+
+hola mundo! este es un mail plain text de una =FAnica parte.
+
+..
+
+Firma:
+=2D-=20
+Buenos Aires, Argentina
+.

@@ -1,0 +1,5 @@
+package ar.edu.itba.pdc.mail;
+
+public enum BodyStatus {
+    DEFAULT, BODY_HEADER, GETTING_IMAGE_HEADER, GETTING_IMAGE, PROCESSING_IMAGE, IMAGE_SIZE_EXCEEDED, ENDED
+}
